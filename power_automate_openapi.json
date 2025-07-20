@@ -1,0 +1,64 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Minimal Test Skill API",
+    "description": "A minimal OpenAPI definition for testing in Copilot Studio.",
+    "version": "1.0.0"
+  },
+  "host": "example.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/testSkill": {
+      "post": {
+        "operationId": "testSkill",
+        "summary": "Test Skill Endpoint",
+        "description": "A simple test endpoint with one input and one output.",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "testInput",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "testInput": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "testInput"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "testOutput": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
