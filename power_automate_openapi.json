@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Power Automate Flow API",
+    "description": "API definition for a Power Automate flow triggered via HTTP POST with a filterValue parameter.",
+    "version": "1.0.0"
+  },
+  "host": "0dad951ba8e5e975bab84c7c090ac2.50.environment.api.powerplatform.com",
+  "basePath": "/powerautomate/automations/direct/workflows/415c668c6f0e410488f957a9e9dabee5/triggers/manual/paths/invoke",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Trigger the Power Automate flow",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "filterValue": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "filterValue"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "FilteredResult": {
+                  "type": "object"
+                },
+                "FilterCount": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
